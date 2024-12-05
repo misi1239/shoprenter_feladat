@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+    nginx-service:
+        image: nginx:stable
+        container_name: nginx-container
+        ports:
+            - "8080:80"
+        volumes:
+            - ./:/var/www/project
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - php82-service
+            - database-service
+    database-service:
+        image: 'mysql:8.0'
+        container_name: database-container
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: secret_db
+        ports:
+            - '3306:3306'
+        volumes:
+            - db_data:/var/lib/mysql
+    php82-service:
+        build:
+            context: .
+            dockerfile: ./php/Dockerfile
+        container_name: php82-container
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./:/var/www/project
+volumes:
+    db_data:
