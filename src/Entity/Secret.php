@@ -25,7 +25,6 @@ use Doctrine\ORM\Mapping as ORM;
                 provider: ListSecretProvider::class
             ),
         ],
-        routePrefix: '/v1',
     )
 ]
 #[ORM\Entity(repositoryClass: SecretRepository::class)]
