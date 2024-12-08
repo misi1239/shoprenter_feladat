@@ -1,4 +1,0 @@
-
-mysql8-service:
-    type: mysql:11.0
-
