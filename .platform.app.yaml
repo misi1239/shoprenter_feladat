@@ -10,6 +10,10 @@ runtime:
         - ctype
         - iconv
         - pdo_mysql
+
+
+relationships:
+    mariadb-service: "database:mariadb"
         
 
 #variables:
