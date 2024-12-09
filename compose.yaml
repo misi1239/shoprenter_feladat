@@ -1,7 +1,7 @@
 services:
-    mysql8-service:
-        image: 'mysql:8.0'
-        container_name: mysql8-container
+    mariadb-service:
+        image: 'mariadb:10.11'
+        container_name: mariadb-container
         environment:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: secret_db
