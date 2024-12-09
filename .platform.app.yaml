@@ -13,8 +13,7 @@ runtime:
 
 
 relationships:
-    database: "database:mariadb"
-        
+    mariadb-service: "mariadb-service:mysql"
 
 #variables:
 #    php:
